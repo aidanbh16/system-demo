@@ -1,5 +1,7 @@
 package com.system_demo.system;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.SQLException;
 
 import org.springframework.boot.SpringApplication;
@@ -19,8 +21,8 @@ public class EnterpriseSystemDemoApplication {
     CommandLineRunner run(Database database) {
         return args -> {
             try {
-                database.dbConnect();
-                System.out.println("Connected on startup!");
+                String sql = Files.readString(Path.of("src/main/resources/schema.sql"));
+                database.writeSQL(sql);
             } catch (SQLException e) {
                 System.out.println("Failed to connect: " + e.getMessage());
             }

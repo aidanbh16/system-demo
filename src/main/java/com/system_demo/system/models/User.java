@@ -1,22 +1,30 @@
 package com.system_demo.system.models;
 
 public class User {
+    private String id;
     private String username;
     private String email;
     private String pass;
     private String displayName;
     private String bio;
     private int age;
-    private boolean admin;
 
-    public User(String username, String email, String pass, String displayName, String bio, int age, boolean admin){
+    public User(String id, String username, String email, String pass, String displayName, String bio, int age, boolean admin){
+        this.id = id;
         this.username = username;
         this.email = email;
         this.pass = pass;
         this.displayName = displayName;
         this.bio = bio;
         this.age = age;
-        this.admin = admin;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -65,13 +73,5 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
     }
 }

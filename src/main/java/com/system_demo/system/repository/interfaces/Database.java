@@ -5,4 +5,5 @@ import java.sql.SQLException;
 
 public interface Database {
     Connection dbConnect() throws SQLException;
+    void writeSQL(String sql) throws SQLException;
 }

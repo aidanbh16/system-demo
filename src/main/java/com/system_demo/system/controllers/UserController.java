@@ -1,9 +1,7 @@
-package com.enterprise_demo.enterprise_system_demo.controllers;
+package com.system_demo.system.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.system_demo.system.models.User;
 
 @RestController
 @RequestMapping("/users")
